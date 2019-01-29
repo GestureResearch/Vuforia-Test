@@ -90,6 +90,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Enable canvas':
         foreach (var component in canvasComponents)
             component.enabled = true;
+
+        // Enable Child:
+        this.transform.GetChild(0).gameObject.SetActive(true);
+        ; Debug.Log(this.transform.GetChild(0).name + " is Active.");
     }
 
 
@@ -110,6 +114,10 @@ public class DefaultTrackableEventHandler : MonoBehaviour, ITrackableEventHandle
         // Disable canvas':
         foreach (var component in canvasComponents)
             component.enabled = false;
+
+        // Disable Child
+        this.transform.GetChild(0).gameObject.SetActive(false);
+        Debug.Log(this.transform.GetChild(0).name + " is Not Active.");
     }
 
     #endregion // PROTECTED_METHODS
